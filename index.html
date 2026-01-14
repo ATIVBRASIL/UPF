@@ -1,4 +1,597 @@
-<section class="section-padding" style="background: var(--dark-card);">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento UPF 2026 - ATIV | Elite da Segurança Privada</title>
+    <meta name="description" content="Imersão tática em Uso Progressivo da Força conforme a Lei 14.967/2024. Blindagem jurídica e operacional para vigilantes de elite.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black-bg: #050505;
+            --dark-card: #121212;
+            --gold-primary: #D4AF37; /* Ouro Tático */
+            --gold-hover: #b59021;
+            --white-text: #f5f5f5;
+            --gray-text: #a3a3a3;
+            --danger-red: #cf2e2e;
+            --success-green: #2ecc71;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--black-bg);
+            color: var(--white-text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 800px; /* Otimizado para leitura focada */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-cta {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, var(--gold-primary) 0%, var(--gold-hover) 100%);
+            color: #000;
+            font-weight: 800;
+            text-align: center;
+            padding: 20px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-subtext {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            margin-top: 12px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: radial-gradient(circle at top center, #1f1f1f 0%, #000000 80%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+        .pre-headline {
+            color: var(--gold-primary);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem; /* Grande no mobile */
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: var(--gold-primary);
+            display: block; /* Quebra de linha forçada */
+        }
+
+        .sub-headline {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* --- SCARCITY BAR --- */
+        .scarcity-bar {
+            background: rgba(207, 46, 46, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 20px 0;
+            border: 1px dashed var(--danger-red);
+        }
+
+        .scarcity-text {
+            color: var(--danger-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* --- PAIN SECTION (The Cost) --- */
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-primary);
+            margin: 10px auto 0;
+        }
+
+        .alert-box {
+            background: #1a0505;
+            border-left: 4px solid var(--danger-red);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .pain-card {
+            background: var(--dark-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .pain-card h3 {
+            color: var(--white-text);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pain-card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            list-style: none;
+        }
+
+        .pain-card ul li::before {
+            content: "✖";
+            color: var(--danger-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* --- MODULES SECTION (NEW) --- */
+        .modules-container {
+            background: #0f0f0f;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .module-item {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.3s;
+        }
+
+        .module-item:last-child {
+            border-bottom: none;
+        }
+
+        .module-header {
+            color: var(--gold-primary);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-desc {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* --- STACK SECTION (Offer) --- */
+        .stack-box {
+            background: var(--dark-card);
+            border: 2px solid var(--gold-primary);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .stack-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-left {
+            text-align: left;
+        }
+
+        .item-name {
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+        }
+        
+        .item-sub {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            font-weight: 400;
+        }
+
+        .item-value {
+            text-align: right;
+            color: var(--gold-primary);
+            font-weight: 700;
+            white-space: nowrap;
+            font-size: 1.1rem;
+        }
+
+        .bonus-tag {
+            background: var(--success-green);
+            color: #000;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 800;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .price-area {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #444;
+        }
+
+        .total-value {
+            font-size: 1.2rem;
+            color: #666;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .real-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white-text);
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .installments {
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- INSTRUCTOR/AUTHORITY --- */
+        .authority-box {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold-primary);
+            margin-top: 40px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            font-size: 0.8rem;
+            color: #666;
+            background: #000;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+            .stack-item { padding: 20px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <div class="pre-headline">ATIV | ACADEMIA DE TÁTICAS E INTELIGÊNCIA</div>
+            <h1>TREINAMENTO DE APERFEIÇOAMENTO<br><span>UPF 2026</span></h1>
+            <p class="sub-headline">Domine o limite entre a conduta de elite e o excesso. Não deixe que uma falha de segundos destrua sua liberdade e sua carreira para sempre.</p>
+            
+            <div class="scarcity-bar">
+                <p class="scarcity-text">⚠️ Restam apenas 12 vagas para a turma de 09/Março</p>
+            </div>
+
+            <a href="#checkout" class="btn-cta">GARANTIR MINHA VAGA NA ELITE</a>
+            <span class="btn-subtext">Indaiatuba/SP • Presencial • Certificado Homologado</span>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="alert-box">
+                <strong style="color: var(--danger-red); display: block; margin-bottom: 5px;">🚨 ALERTA: LEI 14.967/2024</strong>
+                <p style="font-size: 0.95rem; color: #ddd;">Com o novo Estatuto da Segurança Privada, a Polícia Federal não tolera amadorismo. Um erro no Uso Progressivo da Força, gera prisão e cancelamento de alvará.</p>
+            </div>
+
+            <h2 class="section-title">O PREÇO DO ERRO OPERACIONAL</h2>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>👤 Para o Vigilante</h3>
+                    <ul>
+                        <li>Responde por crime ao usar força excessiva.</li>
+                        <li>Perda do registro e proibição de trabalhar.</li>
+                        <li>Paga indenização por danos materiais e morais.</li>
+                    </ul>
+                </div>
+                <div class="pain-card">
+                    <h3>🏢 Para a Empresa</h3>
+                    <ul>
+                        <li>Polícia Federal pode fechar e cassar a empresa.</li>
+                        <li>Empresa paga por todos os erros do vigilante.</li>
+                        <li>Multas severas por descumprir leis de segurança.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #0a0a0a;">
+        <div class="container">
+            <h2 class="section-title">GRADE CURRICULAR: <span style="color: var(--gold-primary);">PROTOCOLO DE ELITE</span></h2>
+            <p style="text-align: center; color: #aaa; margin-bottom: 30px;">9 Módulos desenhados para blindar seu CPF e seu CNPJ.</p>
+
+            <div class="modules-container">
+                
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 01 • Anatomia do Risco Legal</div>
+                    <div class="module-desc">Entenda a matriz de consequências da Lei 14.967 e blinde seu futuro contra a ruína jurídica e financeira.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 02 • Radar de Anomalias</div>
+                    <div class="module-desc">Profiling Tático: Identifique a intenção hostil no olhar antes da arma ser sacada. Abandone a "polidez social" que mata.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 03 • Engenharia da Proporcionalidade</div>
+                    <div class="module-desc">O algoritmo exato para aplicar a dose de força que neutraliza o inimigo sem gerar processo por excesso.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 04 • O Espectro da Resistência</div>
+                    <div class="module-desc">Diagnostique a "Falsa Cooperação" vs "Rendição Real". Evite ser surpreendido ou acusado de abuso de autoridade.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 05 • A Dinâmica de Gatilho</div>
+                    <div class="module-desc">Automatize sua resposta: Você não escolhe, você reage. A ação do inimigo dita a sua reação legal imediata.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 06 • A Guerra Narrativa</div>
+                    <div class="module-desc">O Juiz só sabe o que você escreve. As palavras-chave que transformam um B.O. em "Excludente de Ilicitude".</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 07 • O "Driver" de Combate</div>
+                    <div class="module-desc">Neurociência aplicada para eliminar o "congelamento". Aja por instinto e memória muscular sob estresse de morte.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 08 • Dissociação Tática</div>
+                    <div class="module-desc">Desligue o Ego (CPF), ligue a Autoridade (CNV). Torne-se imune a insultos e proteja seu emocional.</div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-header">MÓDULO 09 • Mestrado em Controle de Caos</div>
+                    <div class="module-desc">Domine a Dissuasão Ativa e o Judô Verbal. A suprema arte de vencer a batalha sem disparar um tiro.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="checkout">
+        <div class="container">
+            <h2 class="section-title">OFERTA DE BLINDAGEM TOTAL</h2>
+            
+            <div class="stack-box">
+                <div class="stack-item">
+                    <div class="item-left">
+                        <span class="item-name">Imersão Presencial UPF (6 Horas)</span>
+                        <span class="item-sub">Certificação de Aperfeiçoamento e Prática</span>
+                    </div>
+                    <div class="item-value">R$ 997</div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="item-left">
+                        <span class="bonus-tag">BÔNUS #1</span>
+                        <span class="item-name">Kit "Relatório Blindado"</span>
+                        <span class="item-sub">20 Modelos de escrita jurídica defensiva</span>
+                    </div>
+                    <div class="item-value">R$ 497</div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="item-left">
+                        <span class="bonus-tag">BÔNUS #2</span>
+                        <span class="item-name">Guia de Bolso UPF 2026</span>
+                        <span class="item-sub">Matriz de decisão rápida para o posto</span>
+                    </div>
+                    <div class="item-value">R$ 197</div>
+                </div>
+                
+                <div class="stack-item">
+                    <div class="item-left">
+                        <span class="bonus-tag">BÔNUS #3</span>
+                        <span class="item-name">Workshop Verbalização Tática</span>
+                        <span class="item-sub">Resolva conflitos sem força física</span>
+                    </div>
+                    <div class="item-value">R$ 297</div>
+                </div>
+
+                <div class="price-area">
+                    <div class="total-value">Valor Total: R$ 1.988,00</div>
+                    <div class="real-price">R$ 597,00</div>
+                    <div class="installments">ou 12x de R$ 59,70</div>
+                    
+                    <a href="#" class="btn-cta">QUERO MINHA CERTIFICAÇÃO AGORA</a>
+                    <span class="btn-subtext">🔒 Pagamento 100% Seguro • Acesso Imediato aos Bônus</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/929/929440.png" alt="Garantia" style="width: 60px; filter: invert(1);">
+                <h3 style="margin: 15px 0; color: #fff;">GARANTIA DE FERRO</h3>
+                <p style="color: #aaa; max-width: 600px; margin: 0 auto;">Se ao final das 6 horas você não se sentir 100% mais seguro para tomar decisões críticas, nós devolvemos o valor da sua inscrição. O risco é todo nosso.</p>
+            </div>
+        </div>
+    </section>
+  
+  <section style="padding: 80px 0; background: #050505; border-top: 1px solid #222;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 2rem; color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
+                QUEM COMANDA A INSTRUÇÃO
+            </h2>
+            <div style="width: 60px; height: 3px; background: #333; margin: 0 auto;"></div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 40px; align-items: center; background: #121212; border: 1px solid #333; padding: 40px; border-radius: 12px; position: relative; overflow: hidden;">
+            
+            <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0) 70%); pointer-events: none;"></div>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; width: 100%;">
+                
+                <div style="display: flex; justify-content: center; align-items: flex-start;">
+                    <div style="position: relative;">
+                        <img src="https://ativbrasil.github.io/UPF/InstrutorDantas4.png" 
+                             alt="Tenente Alex Andreoli Dantas" 
+                             style="width: 100%; max-width: 350px; border-radius: 8px; border: 2px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(20%) contrast(110%);">
+                        
+                        <div style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #D4AF37; color: #000; padding: 5px 15px; font-weight: 800; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.9rem; white-space: nowrap; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            Instrutor de Elite
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: #fff; line-height: 1.1; margin-bottom: 5px; text-transform: uppercase;">
+                        TENENTE DANTAS
+                    </h3>
+                    <span style="color: #888; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: block; font-weight: 600;">
+                        Veterano Força Tática | Filósofo | Analista Comportamental
+                    </span>
+
+                    <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
+                        <strong style="color: #fff;">"Não existe teoria sem sangue no asfalto."</strong>
+                    </p>
+                    
+                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                        O Tenente Alex Andreoli Dantas traz uma combinação rara e letal para o cenário de instrução: a experiência bruta de <strong style="color: #fff;">26 anos em patrulhamento tático de alto risco</strong>, somada à profundidade intelectual da Filosofia e da Análise Comportamental (IBC).
+                    </p>
+
+                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                        Pesquisador independente sobre <em>"Comportamento em Atitude Suspeita"</em>, ele ensina o operador a ler a intenção do criminoso antes do primeiro movimento. Se você quer aprender com quem viveu a guerra urbana e sobreviveu para ensinar, este é o seu mentor.
+                    </p>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                            Formação Operações Especiais
+                        </span>
+                        <span style="border: 1px solid #333; color: #888; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                            Analista Comportamental
+                        </span>
+                        <span style="border: 1px solid #333; color: #888; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                            Veterano
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @media (min-width: 768px) {
+            .container h2 { font-size: 2.5rem; }
+            .instructor-grid { grid-template-columns: 1fr 1.5fr; text-align: left; }
+            /* Seletor direto para o grid interno, caso precise ajustar classes específicas */
+            div[style*="display: grid"] { grid-template-columns: 2fr 3fr !important; text-align: left; }
+        }
+    </style>
+</section>
+
+    <section class="section-padding" style="background: var(--dark-card);">
     <div class="container">
         <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
         
@@ -43,3 +636,18 @@
         </details>
     </div>
 </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: 700; color: #fff; margin-bottom: 10px;">ATIV - ACADEMIA DE TÁTICAS E INTELIGÊNCIA DE VIGILÂNCIA</p>
+            <p>
+                Este treinamento respeita integralmente os direitos humanos e a legislação vigente.<br>
+                Não há instrução de uso de equipamentos proibidos (ex: algemas para vigilantes).<br>
+                Direitos Reservados © 2026.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

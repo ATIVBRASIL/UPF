@@ -13,13 +13,13 @@
     <style>
         :root {
             --black-bg: #050505;
-            --dark-card: #121212;
-            --gold-primary: #D4AF37; /* Ouro Tático */
+            --card-bg: #0a0a0a; /* Fundo levemente mais claro para os cards */
+            --gold-primary: #D4AF37;
             --gold-hover: #b59021;
             --white-text: #f5f5f5;
             --gray-text: #a3a3a3;
             --danger-red: #cf2e2e;
-            --success-green: #2ecc71;
+            --success-green: #2ecc71; /* Verde do print */
             --border-color: #2a2a2a;
         }
 
@@ -45,9 +45,48 @@
         }
 
         .container {
-            max-width: 800px; /* Otimizado para leitura focada */
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* --- NOVO DESIGN SYSTEM (Baseado nos seus Prints) --- */
+        .card-design {
+            background-color: var(--card-bg);
+            border-radius: 30px; /* Arredondamento forte igual ao print */
+            padding: 35px 25px;
+            margin-bottom: 25px;
+            border: 1px solid;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Variação Vermelha (Igual ao print "Para quem NÃO é") */
+        .card-danger {
+            border-color: var(--danger-red);
+            box-shadow: 0 0 20px rgba(207, 46, 46, 0.1);
+        }
+
+        /* Variação Verde (Igual ao print "Para quem É") */
+        .card-success {
+            border-color: var(--success-green);
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.1);
+        }
+        
+        /* Variação Dourada (Para oferta e destaque) */
+        .card-gold {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .card-title-box {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
         }
 
         /* --- BUTTONS --- */
@@ -59,7 +98,7 @@
             font-weight: 800;
             text-align: center;
             padding: 20px 24px;
-            border-radius: 6px;
+            border-radius: 12px; /* Botão mais arredondado para combinar */
             text-decoration: none;
             font-size: 1.3rem;
             text-transform: uppercase;
@@ -91,7 +130,7 @@
             background: radial-gradient(circle at top center, #1f1f1f 0%, #000000 80%);
             padding: 60px 0 40px;
             text-align: center;
-            border-bottom: 2px solid var(--gold-primary);
+            border-bottom: 1px solid #222;
         }
 
         .pre-headline {
@@ -104,14 +143,14 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem; /* Grande no mobile */
+            font-size: 2.5rem;
             margin-bottom: 15px;
             color: #fff;
         }
 
         .hero h1 span {
             color: var(--gold-primary);
-            display: block; /* Quebra de linha forçada */
+            display: block;
         }
 
         .sub-headline {
@@ -125,7 +164,7 @@
         .scarcity-bar {
             background: rgba(207, 46, 46, 0.1);
             padding: 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             text-align: center;
             margin: 20px 0;
             border: 1px dashed var(--danger-red);
@@ -138,7 +177,7 @@
             font-size: 0.9rem;
         }
 
-        /* --- PAIN SECTION (The Cost) --- */
+        /* --- SECTIONS GENERAL --- */
         .section-padding {
             padding: 60px 0;
         }
@@ -167,51 +206,46 @@
             border-radius: 4px;
         }
 
-        .pain-card {
-            background: var(--dark-card);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
-        }
-
-        .pain-card h3 {
-            color: var(--white-text);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pain-card ul li {
+        /* --- MODIFICAÇÃO: PAIN LIST (Estilo Print Vermelho) --- */
+        .pain-list ul li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            color: var(--gray-text);
-            font-size: 0.95rem;
+            padding-left: 35px; /* Espaço para o ícone */
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 1rem;
             list-style: none;
+            border-bottom: 1px solid rgba(207, 46, 46, 0.2);
+            padding-bottom: 15px;
+        }
+        
+        .pain-list ul li:last-child {
+            border-bottom: none;
         }
 
-        .pain-card ul li::before {
-            content: "✖";
+        .pain-list ul li::before {
+            content: "✖"; /* Ícone X */
             color: var(--danger-red);
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.1rem;
+            background: rgba(207, 46, 46, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* --- MODULES SECTION (NEW) --- */
-        .modules-container {
-            background: #0f0f0f;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
+        /* --- MODIFICAÇÃO: MODULES SECTION (Estilo Print Verde) --- */
+        .modules-card-container {
+            /* Aplica o estilo do card verde na lista de módulos */
         }
 
         .module-item {
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-            transition: background 0.3s;
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
         }
 
         .module-item:last-child {
@@ -219,7 +253,7 @@
         }
 
         .module-header {
-            color: var(--gold-primary);
+            color: var(--white-text); /* Branco para destaque */
             font-family: 'Oswald', sans-serif;
             font-size: 1.1rem;
             margin-bottom: 5px;
@@ -227,23 +261,28 @@
             align-items: center;
             gap: 10px;
         }
+        
+        .check-icon {
+            color: var(--success-green);
+            background: rgba(46, 204, 113, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
 
         .module-desc {
-            color: #ccc;
+            color: #999;
             font-size: 0.9rem;
             line-height: 1.5;
+            padding-left: 34px; /* Alinhado com o texto acima */
         }
 
-        /* --- STACK SECTION (Offer) --- */
-        .stack-box {
-            background: var(--dark-card);
-            border: 2px solid var(--gold-primary);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
-        }
-
+        /* --- STACK SECTION --- */
         .stack-item {
             display: flex;
             justify-content: space-between;
@@ -256,9 +295,7 @@
             border-bottom: none;
         }
 
-        .item-left {
-            text-align: left;
-        }
+        .item-left { text-align: left; }
 
         .item-name {
             font-weight: 700;
@@ -320,15 +357,6 @@
             margin-bottom: 30px;
         }
 
-        /* --- INSTRUCTOR/AUTHORITY --- */
-        .authority-box {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid var(--gold-primary);
-            margin-top: 40px;
-        }
-
         /* --- FOOTER --- */
         footer {
             padding: 40px 0;
@@ -339,17 +367,15 @@
             background: #000;
         }
 
-        /* --- ANIMATIONS --- */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
             70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
-        /* --- MOBILE TWEAKS --- */
         @media (min-width: 768px) {
             .hero h1 { font-size: 4rem; }
-            .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+            .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
             .stack-item { padding: 20px 0; }
         }
     </style>
@@ -381,23 +407,33 @@
             <h2 class="section-title">O PREÇO DO ERRO OPERACIONAL</h2>
             
             <div class="pain-grid">
-                <div class="pain-card">
-                    <h3>👤 Para o Vigilante</h3>
-                    <ul>
-                        <li>Responde por crime ao usar força excessiva.</li>
-                        <li>Perda do registro e proibição de trabalhar.</li>
-                        <li>Paga indenização por danos materiais e morais.</li>
-                    </ul>
+                <div class="card-design card-danger">
+                    <div class="card-title-box">
+                        <h3>👤 Para o Vigilante</h3>
+                    </div>
+                    <div class="pain-list">
+                        <ul>
+                            <li>Responde por crime ao usar força excessiva.</li>
+                            <li>Perda do registro e proibição de trabalhar.</li>
+                            <li>Paga indenização por danos materiais e morais.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="pain-card">
-                    <h3>🏢 Para a Empresa</h3>
-                    <ul>
-                        <li>Polícia Federal pode fechar e cassar a empresa.</li>
-                        <li>Empresa paga por todos os erros do vigilante.</li>
-                        <li>Multas severas por descumprir leis de segurança.</li>
-                    </ul>
+
+                <div class="card-design card-danger">
+                    <div class="card-title-box">
+                        <h3>🏢 Para a Empresa</h3>
+                    </div>
+                    <div class="pain-list">
+                        <ul>
+                            <li>Polícia Federal pode fechar e cassar a empresa.</li>
+                            <li>Empresa paga por todos os erros do vigilante.</li>
+                            <li>Multas severas por descumprir leis de segurança.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -406,50 +442,50 @@
             <h2 class="section-title">GRADE CURRICULAR: <span style="color: var(--gold-primary);">PROTOCOLO DE ELITE</span></h2>
             <p style="text-align: center; color: #aaa; margin-bottom: 30px;">9 Módulos desenhados para blindar seu CPF e seu CNPJ.</p>
 
-            <div class="modules-container">
+            <div class="card-design card-success">
                 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 01 • Anatomia do Risco Legal</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 01 • Anatomia do Risco Legal</div>
                     <div class="module-desc">Entenda a matriz de consequências da Lei 14.967 e blinde seu futuro contra a ruína jurídica e financeira.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 02 • Radar de Anomalias</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 02 • Radar de Anomalias</div>
                     <div class="module-desc">Profiling Tático: Identifique a intenção hostil no comportamento antecipando a ameaça iminente.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 03 • Engenharia da Proporcionalidade</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 03 • Engenharia da Proporcionalidade</div>
                     <div class="module-desc">O algoritmo exato para aplicar a dose de força que neutraliza o inimigo sem gerar processo por excesso.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 04 • O Espectro da Resistência</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 04 • O Espectro da Resistência</div>
                     <div class="module-desc">Diagnostique a "Falsa Cooperação" vs "Rendição Real". Evite ser surpreendido ou acusado de abuso de autoridade.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 05 • A Dinâmica de Gatilho</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 05 • A Dinâmica de Gatilho</div>
                     <div class="module-desc">Automatize sua resposta: Você não escolhe, você reage. A ação do inimigo dita a sua reação legal imediata.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 06 • A Guerra Narrativa</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 06 • A Guerra Narrativa</div>
                     <div class="module-desc">O Juiz só sabe o que você escreve. As palavras-chave que transformam um B.O. em "Excludente de Ilicitude".</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 07 • O "Driver" de Combate</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 07 • O "Driver" de Combate</div>
                     <div class="module-desc">Neurociência aplicada para eliminar o "congelamento". Aja por instinto e memória muscular sob estresse de morte.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 08 • Dissociação Tática</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 08 • Dissociação Tática</div>
                     <div class="module-desc">Desligue o Ego (CPF), ligue a Autoridade (CNV). Torne-se imune a insultos e proteja seu emocional.</div>
                 </div>
 
                 <div class="module-item">
-                    <div class="module-header">MÓDULO 09 • Mestrado em Controle de Caos</div>
+                    <div class="module-header"><div class="check-icon">✓</div> MÓDULO 09 • Mestrado em Controle de Caos</div>
                     <div class="module-desc">Domine a Dissuasão Ativa e o Judô Verbal. A suprema arte de vencer a batalha sem disparar um tiro.</div>
                 </div>
 
@@ -461,7 +497,7 @@
         <div class="container">
             <h2 class="section-title">OFERTA DE BLINDAGEM TOTAL</h2>
             
-            <div class="stack-box">
+            <div class="card-design card-gold">
                 <div class="stack-item">
                     <div class="item-left">
                         <span class="item-name">Imersão Presencial UPF (6 Horas)</span>
@@ -514,84 +550,85 @@
             </div>
         </div>
     </section>
-  
-  <section style="padding: 80px 0; background: #050505; border-top: 1px solid #222;">
-    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
-        
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-family: 'Oswald', sans-serif; font-size: 2rem; color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
-                QUEM COMANDA A INSTRUÇÃO
-            </h2>
-            <div style="width: 60px; height: 3px; background: #333; margin: 0 auto;"></div>
-        </div>
 
-        <div style="display: flex; flex-direction: column; gap: 40px; align-items: center; background: #121212; border: 1px solid #333; padding: 40px; border-radius: 12px; position: relative; overflow: hidden;">
+    <section style="padding: 80px 0; background: #050505; border-top: 1px solid #222;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
             
-            <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0) 70%); pointer-events: none;"></div>
-
-            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; width: 100%;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-family: 'Oswald', sans-serif; font-size: 2rem; color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
+                    QUEM COMANDA A INSTRUÇÃO
+                </h2>
+                <div style="width: 60px; height: 3px; background: #333; margin: 0 auto;"></div>
+            </div>
+    
+            <div style="display: flex; flex-direction: column; gap: 40px; align-items: center; background: #121212; border: 1px solid #333; padding: 40px; border-radius: 12px; position: relative; overflow: hidden;">
                 
-                <div style="display: flex; justify-content: center; align-items: flex-start;">
-                    <div style="position: relative;">
-                        <img src="https://ativbrasil.github.io/UPF/InstrutorDantas4.png" 
-                             alt="Tenente Alex Andreoli Dantas" 
-                             style="width: 100%; max-width: 350px; border-radius: 8px; border: 2px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(20%) contrast(110%);">
-                        
-                        <div style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #D4AF37; color: #000; padding: 5px 15px; font-weight: 800; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.9rem; white-space: nowrap; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-                            Instrutor de Elite
+                <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0) 70%); pointer-events: none;"></div>
+    
+                <div style="display: grid; grid-template-columns: 1fr; gap: 30px; width: 100%;">
+                    
+                    <div style="display: flex; justify-content: center; align-items: flex-start;">
+                        <div style="position: relative;">
+                            <img src="https://ativbrasil.github.io/UPF/InstrutorDantas4.png" 
+                                 alt="Tenente Alex Andreoli Dantas" 
+                                 style="width: 100%; max-width: 350px; border-radius: 8px; border: 2px solid #D4AF37; box-shadow: 0 10px 30px rgba(0,0,0,0.5); filter: grayscale(20%) contrast(110%);">
+                            
+                            <div style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #D4AF37; color: #000; padding: 5px 15px; font-weight: 800; font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 0.9rem; white-space: nowrap; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                                Instrutor de Elite
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                    
-                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: #fff; line-height: 1.1; margin-bottom: 5px; text-transform: uppercase;">
-                        TENENTE DANTAS
-                    </h3>
-                    <span style="color: #888; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: block; font-weight: 600;">
-                        Veterano Força Tática | Filósofo | Analista Comportamental | Coach Militar
-                    </span>
-
-                    <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
-                        <strong style="color: #fff;">"Não ensino só o que li. Ensino o que sobrevivi."</strong>
-                    </p>
-                    
-                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                        O Tenente Alex Andreoli Dantas traz uma combinação rara e indispensável para o cenário de instrução: a experiência bruta de <strong style="color: #fff;">26 anos em patrulhamento tático de alto risco</strong>, somada à profundidade intelectual da: Filosofia, Neurociência e da Análise Comportamental.
-                    </p>
-
-                    <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-                        Pesquisador independente sobre <em>"Comportamento em Atitude Suspeita"</em>, ele ensina o operador a ler a intenção do criminoso antes do primeiro movimento. Se você quer aprender com quem viveu a guerra urbana e sobreviveu para ensinar, este é o seu mentor.
-                    </p>
-
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
-                            Patrulhamento de Alto Risco
+    
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        
+                        <h3 style="font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: #fff; line-height: 1.1; margin-bottom: 5px; text-transform: uppercase;">
+                            TENENTE DANTAS
+                        </h3>
+                        <span style="color: #888; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: block; font-weight: 600;">
+                            Veterano Força Tática | Filósofo | Analista Comportamental | Coach Militar
                         </span>
+    
+                        <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
+                            <strong style="color: #fff;">"Não ensino só o que li. Ensino o que sobrevivi."</strong>
+                        </p>
+                        
+                        <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                            O Tenente Alex Andreoli Dantas traz uma combinação rara e indispensável para o cenário de instrução: a experiência bruta de <strong style="color: #fff;">26 anos em patrulhamento tático de alto risco</strong>, somada à profundidade intelectual da: Filosofia, Neurociência e da Análise Comportamental.
+                        </p>
+    
+                        <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                            Pesquisador independente sobre <em>"Comportamento em Atitude Suspeita"</em>, ele ensina o operador a ler a intenção do criminoso antes do primeiro movimento. Se você quer aprender com quem viveu a guerra urbana e sobreviveu para ensinar, este é o seu mentor.
+                        </p>
+    
                         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
-                            Analista Comportamental
-                        </span>
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                        <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
-                            Treinamento de Elite Para Vigilantes
-                        </span>
+                            <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                                Patrulhamento de Alto Risco
+                            </span>
+                             <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                                Analista Comportamental
+                            </span>
+                             <span style="border: 1px solid #D4AF37; color: #D4AF37; padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                                Treinamento de Elite Para Vigilantes
+                            </span>
+                        </div>
+    
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-
-    <style>
-        @media (min-width: 768px) {
-            .container h2 { font-size: 2.5rem; }
-            .instructor-grid { grid-template-columns: 1fr 1.5fr; text-align: left; }
-            /* Seletor direto para o grid interno, caso precise ajustar classes específicas */
-            div[style*="display: grid"] { grid-template-columns: 2fr 3fr !important; text-align: left; }
-        }
-    </style>
-</section>
+    
+        <style>
+            @media (min-width: 768px) {
+                .container h2 { font-size: 2.5rem; }
+                /* Ajuste responsivo do instrutor */
+                div[style*="display: grid"] { grid-template-columns: 2fr 3fr !important; text-align: left; }
+            }
+            @media (max-width: 767px) {
+                div[style*="display: grid"] { grid-template-columns: 1fr !important; text-align: center; }
+                 .pain-grid { display: block; }
+            }
+        </style>
+    </section>
 
     <section class="section-padding" style="background: var(--dark-card);">
     <div class="container">
@@ -651,6 +688,4 @@
     </footer>
 
 </body>
-
 </html>
-

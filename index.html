@@ -560,61 +560,95 @@
             </div>
         </div>
     </section>
-
-    <section class="section-padding" id="checkout">
+  
+  <section class="section-padding" style="background-color: #050505; border-top: 1px solid #222;">
         <div class="container">
-            <h2 class="section-title">OFERTA DE BLINDAGEM TOTAL</h2>
-            
-            <div class="card-design card-gold">
-                <div class="stack-item">
-                    <div class="item-left">
-                        <span class="item-name">Imersão Presencial UPF (6 Horas)</span>
-                        <span class="item-sub">Certificação de Aperfeiçoamento e Prática</span>
-                    </div>
-                    <div class="item-value">R$ 997</div>
-                </div>
+            <h2 class="section-title">ARSENAL DE COMPLEMENTO <span style="color: var(--gold-primary);">(BÔNUS)</span></h2>
+            <p style="text-align: center; color: #aaa; margin-bottom: 40px;">Ao garantir sua vaga hoje, você recebe acesso imediato a R$ 991,00 em bônus táticos:</p>
 
+            <div class="card-design" style="border-color: #333;">
+                
                 <div class="stack-item">
                     <div class="item-left">
                         <span class="bonus-tag">BÔNUS #1</span>
                         <span class="item-name">Kit "Relatório Blindado"</span>
-                        <span class="item-sub">20 Modelos de escrita jurídica defensiva</span>
+                        <span class="item-sub">20 Modelos de escrita jurídica defensiva para B.O. e Relatórios Internos.</span>
                     </div>
-                    <div class="item-value">R$ 497</div>
+                    <div class="item-value" style="text-align: right;">
+                        <span style="text-decoration: line-through; color: var(--danger-red); opacity: 0.7; font-size: 0.9rem;">R$ 125,00</span>
+                        <span style="display: block; color: var(--success-green); font-size: 1.1rem; font-weight: 800;">GRÁTIS</span>
+                    </div>
                 </div>
 
                 <div class="stack-item">
                     <div class="item-left">
                         <span class="bonus-tag">BÔNUS #2</span>
                         <span class="item-name">Guia de Bolso UPF 2026</span>
-                        <span class="item-sub">Matriz de decisão rápida para o posto</span>
+                        <span class="item-sub">Matriz de decisão rápida para consulta imediata no posto de serviço.</span>
                     </div>
-                    <div class="item-value">R$ 197</div>
+                    <div class="item-value" style="text-align: right;">
+                        <span style="text-decoration: line-through; color: var(--danger-red); opacity: 0.7; font-size: 0.9rem;">R$ 98,00</span>
+                        <span style="display: block; color: var(--success-green); font-size: 1.1rem; font-weight: 800;">GRÁTIS</span>
+                    </div>
                 </div>
                 
                 <div class="stack-item">
                     <div class="item-left">
                         <span class="bonus-tag">BÔNUS #3</span>
                         <span class="item-name">Workshop Verbalização Tática</span>
-                        <span class="item-sub">Resolva conflitos sem força física</span>
+                        <span class="item-sub">Aula extra: Como vencer o conflito sem precisar disparar um único tiro.</span>
                     </div>
-                    <div class="item-value">R$ 297</div>
+                    <div class="item-value" style="text-align: right;">
+                        <span style="text-decoration: line-through; color: var(--danger-red); opacity: 0.7; font-size: 0.9rem;">R$ 47,00</span>
+                        <span style="display: block; color: var(--success-green); font-size: 1.1rem; font-weight: 800;">GRÁTIS</span>
+                    </div>
                 </div>
 
-                <div class="price-area">
-                    <div class="total-value">Valor Total: R$ 1.988,00</div>
-                    <div class="real-price">R$ 597,00</div>
-                    <div class="installments">ou 12x de R$ 59,70</div>
-                    
-                    <a href="#" class="btn-cta">QUERO MINHA CERTIFICAÇÃO AGORA</a>
-                    <span class="btn-subtext">🔒 Pagamento 100% Seguro • Acesso Imediato aos Bônus</span>
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(212, 175, 55, 0.05); border-radius: 12px; border: 1px dashed var(--gold-primary);">
+                    <p style="color: var(--gold-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">
+                        ⚡ TOTAL EM PRESENTES: <span style="text-decoration: line-through; opacity: 0.6;">R$ 395,00</span> → <span style="color: var(--success-green);">R$ 0,00</span>
+                    </p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/929/929440.png" alt="Garantia" style="width: 60px; filter: invert(1);">
-                <h3 style="margin: 15px 0; color: #fff;">GARANTIA DE FERRO</h3>
-                <p style="color: #aaa; max-width: 600px; margin: 0 auto;">Se ao final das 6 horas você não se sentir 100% mais seguro para tomar decisões críticas, nós devolvemos o valor da sua inscrição. O risco é todo nosso.</p>
+    <section class="section-padding" id="checkout">
+        <div class="container" style="max-width: 700px;">
+            <h2 class="section-title">SOLICITAR ORÇAMENTO</h2>
+            <p style="text-align: center; color: #aaa; margin-bottom: 30px;">Preencha os dados abaixo para verificar disponibilidade e receber a proposta oficial via WhatsApp.</p>
+            
+            <div class="card-design card-gold">
+                <form id="whatsappForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" class="form-input" placeholder="Ex: Alex Andreoli" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="perfil">Perfil do Interessado</label>
+                            <select id="perfil" class="form-input" required onchange="toggleEmpresa()">
+                                <option value="Particular">Particular (Individual)</option>
+                                <option value="Empresa">Empresa (Grupo)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade/Estado</label>
+                            <input type="text" id="cidade" class="form-input" placeholder="Ex: Indaiatuba/SP" required>
+                        </div>
+                    </div>
+
+                    <div id="campoEmpresa" class="form-group" style="display: none;">
+                        <label for="alunos">Quantidade de Alunos</label>
+                        <input type="number" id="alunos" class="form-input" placeholder="Ex: 15">
+                    </div>
+
+                    <div class="price-area" style="border-top: none; margin-top: 10px; padding-top: 0;">
+                        <button type="button" onclick="sendToWhatsApp()" class="btn-cta">RECEBER ORÇAMENTO</button>
+                        <span class="btn-subtext">Após clicar, você será redirecionado para o WhatsApp da instrução.</span>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -696,54 +730,101 @@
                  .pain-grid { display: block; } /* Empilha no mobile */
                  .pain-grid .card-design { margin-bottom: 25px; } /* Espaço entre os cards no mobile */
             }
+          /* --- ESTILOS DO FORMULÁRIO --- */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background: #151515;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            background: #1a1a1a;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        select.form-input {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
         </style>
     </section>
 
-    <section class="section-padding" style="background: var(--dark-card);">
-    <div class="container">
-        <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
-        
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">O curso já está atualizado pela Lei 14.967 (Novo Estatuto)?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Sim. Todo o conteúdo, incluindo o protocolo de uso de força e tecnologias não letais, foi 100% revisado conforme o novo Estatuto da Segurança Privada e as Portarias da PF vigentes para 2026.</p>
-        </details>
+    <section class="section-padding" style="background-color: var(--card-bg);">
+        <div class="container">
+            <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+            
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">O curso já está atualizado pela Lei 14.967 (Novo Estatuto)?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Sim. Todo o conteúdo, incluindo o protocolo de uso de força e tecnologias não letais, foi 100% revisado conforme o novo Estatuto da Segurança Privada e as Portarias da PF vigentes para 2026.</p>
+            </details>
 
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Não sou Vigilante armado, posso participar?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Com certeza. O curso é essencial também para Porteiros, Controladores de Acesso e Gestores que precisam dominar a legalidade da intervenção física e a postura tática dissuasiva. Você sairá muito à frente no mercado.</p>
-        </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Não sou Vigilante armado, posso participar?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Com certeza. O curso é essencial também para Porteiros, Controladores de Acesso e Gestores que precisam dominar a legalidade da intervenção física e a postura tática dissuasiva. Você sairá muito à frente no mercado.</p>
+            </details>
 
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Vou receber certificado ao final?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Sim. Ao concluir a imersão presencial, você recebe o Certificado Oficial da ATIV, atestando seu aperfeiçoamento técnico e conhecimento das novas leis. Um diferencial de peso para o seu currículo.</p>
-        </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Vou receber certificado ao final?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Sim. Ao concluir a imersão presencial, você recebe o Certificado Oficial da ATIV, atestando seu aperfeiçoamento técnico e conhecimento das novas leis. Um diferencial de peso para o seu currículo.</p>
+            </details>
 
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Este curso substitui a Reciclagem obrigatória?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Não. Este é um treinamento de **Alta Especialização**. Enquanto a reciclagem é o básico obrigatório, o UPF 2026 te entrega a tática avançada e a blindagem jurídica que as escolas de formação não ensinam.</p>
-        </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Este curso substitui a Reciclagem obrigatória?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Não. Este é um treinamento de **Alta Especialização**. Enquanto a reciclagem é o básico obrigatório, o UPF 2026 te entrega a tática avançada e a blindagem jurídica que as escolas de formação não ensinam.</p>
+            </details>
 
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Qual a data e o local exato?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">A imersão ocorre dia 09 de Março em Indaiatuba/SP. Por questões de segurança, o endereço exato do Centro de Treinamento é enviado no seu WhatsApp 5 dias antes do evento.</p>
-        </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Qual a data e o local exato?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">A imersão ocorre dia 09 de Março em Indaiatuba/SP. Por questões de segurança, o endereço exato do Centro de Treinamento é enviado no seu WhatsApp 5 dias antes do evento.</p>
+            </details>
 
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Preciso levar equipamento tático ou ir fardado?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Não é necessário levar equipamentos (como algemas ou cinto), nós fornecemos o material de instrução. Vá com roupa confortável e resistente (preferencialmente calça tática/jeans e bota) para as dinâmicas práticas.</p>
-        </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Preciso levar equipamento tático ou ir fardado?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Não é necessário levar equipamentos (como algemas ou cinto), nós fornecemos o material de instrução. Vá com roupa confortável e resistente (preferencialmente calça tática/jeans e bota) para as dinâmicas práticas.</p>
+            </details>
 
-        <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Quando recebo os bônus digitais?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">O acesso é imediato! Assim que sua inscrição é confirmada, você recebe no e-mail o acesso à área de membros para baixar o "Kit de Relatórios Blindados" e os Guias de Estudo.</p>
-        </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Quando recebo os bônus digitais?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">O acesso é imediato! Assim que sua inscrição é confirmada, você recebe no e-mail o acesso à área de membros para baixar o "Kit de Relatórios Blindados" e os Guias de Estudo.</p>
+            </details>
 
-         <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-            <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Quais as formas de pagamento?</summary>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Você pode garantir sua vaga via Cartão de Crédito (em até 12x), PIX à vista ou Boleto. Para pacotes corporativos (empresas), chame nossa equipe no botão de WhatsApp.</p>
-        </details>
-    </div>
-</section>
+             <details style="margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--gold-primary); list-style: none;">Quais as formas de pagamento?</summary>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Você pode garantir sua vaga via Cartão de Crédito (em até 12x), PIX à vista ou Boleto. Para pacotes corporativos (empresas), chame nossa equipe no botão de WhatsApp.</p>
+            </details>
+        </div>
+    </section>
 
     <footer>
         <div class="container">

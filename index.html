@@ -45,7 +45,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px; /* Aumentado levemente para caber 3 cards */
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -387,8 +387,14 @@
 
         @media (min-width: 768px) {
             .hero h1 { font-size: 4rem; }
-            .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+            /* Ajustado para 3 colunas para acomodar o novo card */
+            .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
             .stack-item { padding: 20px 0; }
+        }
+        
+        /* Ajuste específico para a seção de perfil (2 cards) manter 2 colunas */
+        @media (min-width: 768px) {
+            .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         }
     </style>
 </head>
@@ -444,6 +450,20 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="card-design card-danger">
+                    <div class="card-title-box">
+                        <h3>🏭 Para o Cliente</h3>
+                    </div>
+                    <div class="feature-list cross-list">
+                        <ul>
+                            <li><strong>Resp. Solidária:</strong> Paga a indenização junto com a terceirizada.</li>
+                            <li><strong>Dano à Marca:</strong> Escândalo na mídia e boicote de consumidores.</li>
+                            <li><strong>Crise:</strong> Processos milionários que travam o caixa.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -453,7 +473,7 @@
         <div class="container">
             <h2 class="section-title">PERFIL DO OPERADOR</h2>
             
-            <div class="pain-grid">
+            <div class="pain-grid profile-grid">
                 
                 <div class="card-design card-success">
                     <div class="card-title-box">

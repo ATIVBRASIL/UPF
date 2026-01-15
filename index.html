@@ -836,6 +836,54 @@
             </p>
         </div>
     </footer>
+<script>
+        // Função para mostrar/esconder o campo de quantidade de alunos
+        function toggleEmpresa() {
+            var perfil = document.getElementById("perfil").value;
+            var campoEmpresa = document.getElementById("campoEmpresa");
+            
+            if (perfil === "Empresa") {
+                campoEmpresa.style.display = "block";
+            } else {
+                campoEmpresa.style.display = "none";
+                document.getElementById("alunos").value = ""; // Limpa o campo
+            }
+        }
 
+        // Função que envia os dados para o seu WhatsApp
+        function sendToWhatsApp() {
+            // Seu número já configurado aqui:
+            var numeroWhatsApp = "5519974010028"; 
+            
+            // Pega os dados que a pessoa digitou
+            var nome = document.getElementById("nome").value;
+            var cidade = document.getElementById("cidade").value;
+            var perfil = document.getElementById("perfil").value;
+            var alunos = document.getElementById("alunos").value;
+
+            // Validação simples: se não tiver nome ou cidade, avisa e para.
+            if(nome === "" || cidade === "") {
+                alert("Por favor, preencha seu Nome e Cidade antes de solicitar o orçamento.");
+                return;
+            }
+
+            // Monta a mensagem organizada
+            var mensagem = "*OLÁ TENENTE, QUERO ORÇAMENTO PARA O UPF 2026* %0A" +
+                           "---------------------------------%0A" +
+                           "*Nome:* " + nome + "%0A" +
+                           "*Cidade:* " + cidade + "%0A" +
+                           "*Perfil:* " + perfil;
+
+            // Se for empresa, adiciona a quantidade de alunos na mensagem
+            if(perfil === "Empresa" && alunos !== "") {
+                mensagem += "%0A*Qtd Alunos:* " + alunos;
+            }
+
+            // Cria o link do WhatsApp e abre
+            var url = "https://wa.me/" + numeroWhatsApp + "?text=" + mensagem;
+            window.open(url, '_blank').focus();
+        }
+    </script>
+  
 </body>
 </html>

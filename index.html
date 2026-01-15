@@ -13,13 +13,13 @@
     <style>
         :root {
             --black-bg: #050505;
-            --card-bg: #0a0a0a; /* Fundo levemente mais claro para os cards */
+            --card-bg: #0a0a0a;
             --gold-primary: #D4AF37;
             --gold-hover: #b59021;
             --white-text: #f5f5f5;
             --gray-text: #a3a3a3;
             --danger-red: #cf2e2e;
-            --success-green: #2ecc71; /* Verde do print */
+            --success-green: #2ecc71;
             --border-color: #2a2a2a;
         }
 
@@ -50,30 +50,28 @@
             padding: 0 20px;
         }
 
-        /* --- NOVO DESIGN SYSTEM (Baseado nos seus Prints) --- */
+        /* --- DESIGN SYSTEM (Cards Modernos) --- */
         .card-design {
             background-color: var(--card-bg);
-            border-radius: 30px; /* Arredondamento forte igual ao print */
+            border-radius: 30px;
             padding: 35px 25px;
             margin-bottom: 25px;
             border: 1px solid;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            height: 100%; /* Para alinhar altura no grid */
         }
 
-        /* Variação Vermelha (Igual ao print "Para quem NÃO é") */
         .card-danger {
             border-color: var(--danger-red);
             box-shadow: 0 0 20px rgba(207, 46, 46, 0.1);
         }
 
-        /* Variação Verde (Igual ao print "Para quem É") */
         .card-success {
             border-color: var(--success-green);
             box-shadow: 0 0 20px rgba(46, 204, 113, 0.1);
         }
         
-        /* Variação Dourada (Para oferta e destaque) */
         .card-gold {
             border-color: var(--gold-primary);
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
@@ -84,9 +82,52 @@
             margin-bottom: 25px;
         }
 
-        .card-icon {
-            font-size: 1.5rem;
-            margin-right: 10px;
+        /* --- LISTAS DE CHECK E CROSS (Para Quem É / Não É) --- */
+        .feature-list ul li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 1rem;
+            list-style: none;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 15px;
+        }
+
+        .feature-list ul li:last-child { border-bottom: none; }
+
+        /* Lista Vermelha (X) */
+        .cross-list ul li::before {
+            content: "✖";
+            color: var(--danger-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: rgba(207, 46, 46, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Lista Verde (Check) */
+        .check-list ul li::before {
+            content: "✓";
+            color: var(--success-green);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: rgba(46, 204, 113, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* --- BUTTONS --- */
@@ -98,7 +139,7 @@
             font-weight: 800;
             text-align: center;
             padding: 20px 24px;
-            border-radius: 12px; /* Botão mais arredondado para combinar */
+            border-radius: 12px;
             text-decoration: none;
             font-size: 1.3rem;
             text-transform: uppercase;
@@ -206,43 +247,14 @@
             border-radius: 4px;
         }
 
-        /* --- MODIFICAÇÃO: PAIN LIST (Estilo Print Vermelho) --- */
-        .pain-list ul li {
-            position: relative;
-            padding-left: 35px; /* Espaço para o ícone */
-            margin-bottom: 15px;
-            color: #ccc;
-            font-size: 1rem;
-            list-style: none;
-            border-bottom: 1px solid rgba(207, 46, 46, 0.2);
-            padding-bottom: 15px;
-        }
-        
-        .pain-list ul li:last-child {
-            border-bottom: none;
-        }
-
-        .pain-list ul li::before {
-            content: "✖"; /* Ícone X */
-            color: var(--danger-red);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.1rem;
-            background: rgba(207, 46, 46, 0.1);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
+        /* --- GRID SYSTEM --- */
+        .pain-grid {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        /* --- MODIFICAÇÃO: MODULES SECTION (Estilo Print Verde) --- */
-        .modules-card-container {
-            /* Aplica o estilo do card verde na lista de módulos */
-        }
-
+        /* --- MODULES SECTION --- */
         .module-item {
             padding: 15px 0;
             border-bottom: 1px solid #222;
@@ -253,7 +265,7 @@
         }
 
         .module-header {
-            color: var(--white-text); /* Branco para destaque */
+            color: var(--white-text);
             font-family: 'Oswald', sans-serif;
             font-size: 1.1rem;
             margin-bottom: 5px;
@@ -279,7 +291,7 @@
             color: #999;
             font-size: 0.9rem;
             line-height: 1.5;
-            padding-left: 34px; /* Alinhado com o texto acima */
+            padding-left: 34px;
         }
 
         /* --- STACK SECTION --- */
@@ -411,7 +423,7 @@
                     <div class="card-title-box">
                         <h3>👤 Para o Vigilante</h3>
                     </div>
-                    <div class="pain-list">
+                    <div class="feature-list cross-list">
                         <ul>
                             <li>Responde por crime ao usar força excessiva.</li>
                             <li>Perda do registro e proibição de trabalhar.</li>
@@ -424,7 +436,7 @@
                     <div class="card-title-box">
                         <h3>🏢 Para a Empresa</h3>
                     </div>
-                    <div class="pain-list">
+                    <div class="feature-list cross-list">
                         <ul>
                             <li>Polícia Federal pode fechar e cassar a empresa.</li>
                             <li>Empresa paga por todos os erros do vigilante.</li>
@@ -434,6 +446,42 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #070707;">
+        <div class="container">
+            <h2 class="section-title">PERFIL DO OPERADOR</h2>
+            
+            <div class="pain-grid">
+                
+                <div class="card-design card-success">
+                    <div class="card-title-box">
+                        <h3 style="color: var(--white-text);">Para Quem <span style="color:var(--success-green)">É</span> a Imersão:</h3>
+                    </div>
+                    <div class="feature-list check-list">
+                       <ul>
+                           <li>Você é Vigilante, VSPP ou Escolta e quer blindagem jurídica absoluta para atuar na rua.</li>
+                           <li>Você busca ser reconhecido como "Elite" pela sua empresa e se diferenciar da massa não qualificada.</li>
+                           <li>Você tem disciplina e entende que a força física é o último recurso, e não o primeiro.</li>
+                       </ul>
+                    </div>
+                </div>
+    
+                <div class="card-design card-danger">
+                    <div class="card-title-box">
+                        <h3 style="color: var(--white-text);">Para Quem <span style="color:var(--danger-red)">NÃO É</span> a Imersão:</h3>
+                    </div>
+                    <div class="feature-list cross-list">
+                       <ul>
+                           <li>Você é o "Rambo" que acha que sabe tudo, não aceita instrução e coloca a equipe em risco.</li>
+                           <li>Você busca apenas um "papel" (certificado) rápido sem intenção de evoluir sua técnica real.</li>
+                           <li>Você acredita que estudar leis e comportamento é "perda de tempo" e prefere resolver na violência.</li>
+                       </ul>
+                    </div>
+                </div>
+    
+            </div>
         </div>
     </section>
 
@@ -625,7 +673,8 @@
             }
             @media (max-width: 767px) {
                 div[style*="display: grid"] { grid-template-columns: 1fr !important; text-align: center; }
-                 .pain-grid { display: block; }
+                 .pain-grid { display: block; } /* Empilha no mobile */
+                 .pain-grid .card-design { margin-bottom: 25px; } /* Espaço entre os cards no mobile */
             }
         </style>
     </section>
